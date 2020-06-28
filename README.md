@@ -26,9 +26,10 @@
     3. Watershed algos (Classic vs. Compact): Treats a **grayscale** image as a topographical map and finds lines between pixels of equal brightness. These lines are then used to segment the image into regions
     4. Transformation algorithms: warp, swirl from skimage
     5. Structural similarity index & MSE: measure how two images are different from each other
-7. Dictionary Learning
-8. Convolution kernels
-9. Autoencoders
+7. Dimension Reduction
+    1. Dictionary Learning
+    2. Convolution kernels
+    3. Autoencoders
 
 ### Toolkit
 1. High Pass Filter(HPF) and Low Pass Filter (LPF) (`hpf.py`)
