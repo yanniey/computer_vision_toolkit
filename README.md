@@ -1,7 +1,8 @@
 ## A list of notebooks and helper functions for Computer Vision tasks
 
-Written in Jupyter notebook and models are run on AWS Cloud :sunglasses:
+:sunglasses:
 
+### Jupyter Notebooks 
 1. Masking & Image Manipulation
     * Block views & Pooling (Max/Mean/Median)
     * Contour Detection
@@ -20,13 +21,16 @@ Written in Jupyter notebook and models are run on AWS Cloud :sunglasses:
     1. Erosion (to find holes in image)
     2. Dilation (to find peaks in image)
 6. Segmentation and Transformation 
-    1. Global (e.g. otsu thresholding)vs local thresholding (e.g. cv.adaptiveThreshold): Thresholding: convert grayscale images to binary, or generally to segment objects from the background
+    1. Global (e.g. otsu thresholding) vs local thresholding (e.g. cv.adaptiveThreshold): Thresholding: convert grayscale images to binary, or generally to segment objects from the background
     2. RAG (Region Adjacency Graph):  Used to segment areas of interest from the image. Each region in image is represented as a graph node in RAG, and weight of edge = difference between average colors of pixels in each region
     3. Watershed algos (Classic vs. Compact): Treats a **grayscale** image as a topographical map and finds lines between pixels of equal brightness. These lines are then used to segment the image into regions
     4. Transformation algorithms: warp, swirl from skimage
     5. Structural similarity index & MSE: measure how two images are different from each other
+7. Dictionary Learning
+8. Convolution kernels
+9. Autoencoders
 
-Toolkit
+### Toolkit
 1. High Pass Filter(HPF) and Low Pass Filter (LPF) (`hpf.py`)
 2. Canny edge detection(`canny.py`)
 3. findContours (`contours.py`)
@@ -36,9 +40,10 @@ Toolkit
 7. Rotate, scale and translate the image (`warp.py`)
 8. Add noise to image(`add_noise.py`)
 9. Find similarity between images(MSE, Structural Similarity Index)(`ssim.py`)
+10. Histogram comparison (`histogram_comparison.py` using the `compareHist` function from opencv)
 
 
-Workflow
+### Workflow
 1. Edge detection (e.g. Sobel, Canny). May need to convert to grayscale first
 2. Segment detection (e.g. RAG, watershed)
 3. Transformation(rotation, scale, crop)
