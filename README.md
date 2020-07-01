@@ -34,18 +34,25 @@
 ### Toolkit
 1. High Pass Filter(HPF) and Low Pass Filter (LPF) (`hpf.py`)
 2. Canny edge detection(`canny.py`)
-3. findContours (`contours.py`)
+3. Find contours (`contours.py`)
 4. Try alls threshold methods, e.g. itsu, isodata, mean, min (`try_all_threshold.py`)
 5. RAG thresholding(`rag_thresholding.py`)
-6. Watershed algos (`watershed_classic.py` and `watershed_compact.py`)
+6. Segmentation with Watershed algos (`watershed_classic.py` and `watershed_compact.py`)
 7. Rotate, scale and translate the image (`warp.py`)
 8. Add noise to image(`add_noise.py`)
 9. Find similarity between images(MSE, Structural Similarity Index)(`ssim.py`)
 10. Histogram comparison (`histogram_comparison.py` using the `compareHist` function from opencv)
+11. Detecting lines with `HoughLines` and `HoughLinesP`, circles with `HoughCircles` (`lineDetection.py`,`circleDetection.py`). Detecting other shapes can be done via combining `cv2.findContours` and `cv2.approxPolyDP`
+12. Foreground segmentation with `GrabCut` 
+13. Haar face detection `haarFaceDetection.py`
 
 
 ### Workflow
 1. Edge detection (e.g. Sobel, Canny). May need to convert to grayscale first
-2. Segment detection (e.g. RAG, watershed)
-3. Transformation(rotation, scale, crop)
+2. Segment detection (e.g. RAG, watershed, GrabCut)
+3. Transformation(rotation, scale, crop,distanceTransform)
 4. Feature extraction
+
+### Facial Detection and Recognition 
+1. Haar cascade classifiers
+2. Facial recognition: Eigenfaces, Fisherfaces, Local Binary Pattern Histograms (LBPHs)
