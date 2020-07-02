@@ -1,4 +1,14 @@
-# face recognition with Eigenfaces
+# run  `generateImages.py` before running this script to generate the images
+# how to make it more robust:
+# 1. correctlying aligning faces
+# 2. rotating detected faces
+
+# face recognition with Eigenfaces, Fisherfaces, LBPH
+
+# confidence score
+# Eigenfaces and Fisherfaces produce values (roughly) in the range 0 to 20,000, with any score below 4,000-5,000 being a quite confident recognition. 
+# For LBPH, the reference value for a good recognition is below 50, and any value above 80 is considered a poor confidence score
+
 import os
 import cv2
 import numpy
@@ -34,7 +44,26 @@ names, training_images, training_labels = read_images(
 
 
 # model1: Eigenfaces
+# Eigenfaces parameters:
+# num_components: This is the number of components to keep for the PCA.
+# threshold: This is a floating-point value specifying a confidence threshold. Faces with a confidence score below the threshold will be discarded. By default, the threshold is the maximum floating-point value so that no faces are discarded.
+
 model = cv2.face.EigenFaceRecognizer_create()
+
+# model2: Fisherfaces. Uncomment to use it
+# model = cv2.face.FisherFaceRecognizer_create() 
+
+# model3: Local Binary Patterns Histograms (LBPH). Uncomment to use it
+# with LBPH, we do not need to resize images as the division into grids allows a comparison of patterns identified in each cell.
+# LBPH's parameters:
+# radius: The pixel distance between the neighbors that are used to calculate a cell's histogram (by default, 1)
+# neighbors: The number of neighbors used to calculate a cell's histogram (by default, 8)
+# grid_x: The number of cells into which the face is divided horizontally (by default, 8)
+# grid_y: The number of cells into which the face is divided vertically (by default, 8)
+# confidence: The confidence threshold (by default, the highest possible floating-point value so that no results are discarded)
+
+# model = cv2.face.LBPHFaceRecognizer_create() 
+
 model.train(training_images, training_labels)
 
 
@@ -56,9 +85,11 @@ while (cv2.waitKey(1) == -1):
                 # The ROI is empty. Maybe the face is at the image edge.
                 # Skip it.
                 continue
-            roi_gray = cv2.resize(roi_gray, training_image_size)
+            roi_gray = cv2.resize(roi_gray, training_image_size) # resize each new image to grayscale & of the same size as the training samples 
             label, confidence = model.predict(roi_gray)
-            text = '%s, confidence=%.2f' % (names[label], confidence)
+            text = '%s, confidence=%.2f' % (names[label], confidence) 
             cv2.putText(frame, text, (x, y - 20),
                         cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0), 2)
         cv2.imshow('Face Recognition', frame)
+
+

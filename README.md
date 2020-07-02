@@ -9,10 +9,17 @@
     * Convex Hull
     * Edge detection using Roberts, Sobel and Canny edge detectors
 2. Image Descriptors
-    1. SIFT(Scale Invariant Feature Transform)
-    2. DAISY descriptors
-    3. HOG descriptor (Histogram of Oriented Gradients)
-3. Corner Detection
+    1. SIFT(Scale Invariant Feature Transform): for detecting blobs (a region of an image that greatly differs from its surrounding areas). 
+    2. SURF: for detecting blobs. Improved from SIFT and uses Fast Hessian algo
+    3. DAISY descriptors
+    4. HOG descriptor (Histogram of Oriented Gradients)
+    5. Harris: for detecting corners (`harrisCornerDetection.py`)
+    6. FAST (Features from Accelerated Segment Test): for detecting corners
+    7. BRIEF: for detecting blobs
+    8. ORB (Oriented FAST and Rotated BRIEF): for detecting a combination of corners and blobs, uses both FAST and BRIEF (`orb.py`)
+3. Algo for matching features 
+    1. Brute-force matching (`cv2.BFMatcher` class, using KNN and ratio test) (`orb.py`)
+    2. FLANN-based (Fast Library for Approximate Nearest Neighbors) matching (`flann.py`)
 4. Denoising Filters
     1. Total variation filter: based on the principal that signals with noise have high total variation
     2. Bilateral filter: good at preserving edges
@@ -45,6 +52,7 @@
 11. Detecting lines with `HoughLines` and `HoughLinesP`, circles with `HoughCircles` (`lineDetection.py`,`circleDetection.py`). Detecting other shapes can be done via combining `cv2.findContours` and `cv2.approxPolyDP`
 12. Foreground segmentation with `GrabCut` 
 13. Haar face detection `haarFaceDetection.py`
+14. Face recognition: `generateImages.py` and `faceRecognition.py` (Eigenfaces, Fisherfaces,Local Binary Patterns Histograms)
 
 
 ### Workflow
