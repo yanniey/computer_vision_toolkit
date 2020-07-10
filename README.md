@@ -38,7 +38,7 @@
     2. Convolution kernels
     3. Autoencoders
 
-### Toolkit
+### Toolkit - Image
 1. High Pass Filter(HPF) and Low Pass Filter (LPF) (`hpf.py`)
 2. Canny edge detection(`canny.py`)
 3. Find contours (`contours.py`)
@@ -54,10 +54,23 @@
 13. Haar face detection `haarFaceDetection.py`
 14. Face recognition: `generateImages.py` and `faceRecognition.py` (Eigenfaces, Fisherfaces,Local Binary Patterns Histograms)
 15. Homography, i.e. find images that contain a specific icon (`icon_matcher` folder)
+16. Non-max supression, used for detection with sliding windows where one object may get detected multiple times `non_max_suppression.py`
+17. Customised object detector with SIFT, Bag of Words(BoW), SVM, sliding window and non-max suppression `detector_car_svm.py` and `detector_car_bow_sliding_window.py`
+17. Save and load an SVM detector with `svm.save()` and `svm.load()`
+
+### Toolkit - Video
+1. Object tracking techniques:
+    1. Background subtraction
+        * Basic motion detection using background subtraction `basic_motion_detection.py`
+        * MOG background subtractor `mog.py`
+        * KNN background subtractor  `knn.py`
+        * GMG background subtractor `gmg.py`
+    2. Histogram back-projection with MeanShift or CamShift `meanshift.py`, `camshift.py`
+
 
 
 ### Workflow
-1. Edge detection (e.g. Sobel, Canny). May need to convert to grayscale first
+1. Edge detection (e.g. Sobel, Canny). May need to convert to grayscale first 
 2. Segment detection (e.g. RAG, watershed, GrabCut)
 3. Transformation(rotation, scale, crop,distanceTransform)
 4. Feature extraction
