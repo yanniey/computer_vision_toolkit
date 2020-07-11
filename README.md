@@ -66,15 +66,48 @@
         * KNN background subtractor  `knn.py`
         * GMG background subtractor `gmg.py`
     2. Histogram back-projection with MeanShift or CamShift `meanshift.py`, `camshift.py`
+2. Kalman filters `kalman.py`, `kalman_pedestrian_tracking.py`
 
+### Toolkit - Neural Network
+1. Simple neural network `simple_neural_net.py`, `neural_net_multiple_features.py`
+2. Recognizing handwritten MNIST digits with neural network `neural_net_MNIST.py`. Run `test_neural_net_MNIST.py` to see the neural net's accuracy
+3. Use the model built from MNIST data on new data `detect_and_classify_digits.py`
+4. Ways to improve neural net performance:
+    1. Experiment with the size of your training dataset, the number of hidden nodes, and the number of epochs until you find a peak level of accuracy
+    2. Modify `neural_net_MNIST.create_ann` function so that it supports more than one hidden layer
+    3. Try different activation functions. We have used `cv2.ml.ANN_MLP_SIGMOID_SYM`, but it isn't the only option; the others include `cv2.ml.ANN_MLP_IDENTITY`, `cv2.ml.ANN_MLP_GAUSSIAN`, `cv2.ml.ANN_MLP_RELU`, and `cv2.ml.ANN_MLP_LEAKYRELU`
+    4. Try different training methods. We have used `cv2.ml.ANN_MLP_BACKPROP`. The other options include `cv2.ml.ANN_MLP_RPROP` and `cv2.ml.ANN_MLP_ANNEAL`
+5. Save and load neural network models `save_and_load_neural_net.py`
+6. Load a deep learning model for tensorflow `load_tf_model.py`
+7. Detect and classify objects with 3rd party neural net: mobileNet + Single Shot Detector `detect_objects_neural_net.py`
+8. Detect and classify faces with 3rd party neural nets: `detect_faces_neural_net.py`
+    * Face detection using the Caffe model `res10_300x300_ssd_iter_140000` 
+    * Age and gender detection using the Caffe model `age_net` and `gender_net`
+
+### Toolkit - Imitate Film Filters
+1. Emulate the following 4 types of films using curves
+    * Kodak Portra, a family of films that is optimized for portraits and weddings `class BGRPortraCurveFilter` in `filters.py`
+    * Fuji Provia, a family of general-purpose films `class BGRProviaCurveFilter` in `filters.py`
+    * Fuji Velvia, a family of films that is optimized for landscapes `class BGRVelviaCurveFilter` in `filters.py`
+    * Cross-processing, a nonstandard film processing technique, sometimes used to produce a grungy look in fashion and band photography
 
 
 ### Workflow
 1. Edge detection (e.g. Sobel, Canny). May need to convert to grayscale first 
 2. Segment detection (e.g. RAG, watershed, GrabCut)
 3. Transformation(rotation, scale, crop,distanceTransform)
+    * Apply Gaussian blur to remove noise and make the darkness of image more uniform
+    * Apply threshold  to make image stand out from the background, and erosion to make contours free of irregularities
 4. Feature extraction
+5. Feature matching
+    * Brute Force
+    * FLANN-based with KNN and ratio test
 
 ### Facial Detection and Recognition 
 1. Haar cascade classifiers
 2. Facial recognition: Eigenfaces, Fisherfaces, Local Binary Pattern Histograms (LBPHs)
+
+
+
+
+
