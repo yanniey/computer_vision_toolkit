@@ -42,7 +42,7 @@ flann = cv2.FlannBasedMatcher(index_params, search_params)
 MIN_NUM_GOOD_MATCHES = 10
 
 greatest_num_good_matches = 0
-prime_suspect = None
+best_match_doc_type
 
 print('>> Initiating picture scan...')
 for d in descriptors:
