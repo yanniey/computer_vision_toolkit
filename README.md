@@ -2,6 +2,8 @@
 
 :sunglasses:
 
+[Cheat Sheet: How to debug a Neural Network for Computer Vision problems in Tensorflow](https://gist.github.com/yanniey/50151e9717393dc79993868deb14b194)
+
 ### Jupyter Notebooks 
 1. Masking & Image Manipulation
     * Block views & Pooling (Max/Mean/Median)
