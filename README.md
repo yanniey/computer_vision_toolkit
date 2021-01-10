@@ -1,4 +1,4 @@
-## A list of notebooks and helper functions for Computer Vision tasks
+## A list of Jupyter notebooks and functions for Computer Vision tasks, using OpenCV, Pillow and Tensorflow
 
 :sunglasses:
 
