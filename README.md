@@ -41,6 +41,7 @@
     3. Autoencoders
 
 ### Toolkit - Image
+Files can the found in the folder [Toolkit](https://github.com/yanniey/computer_vision_toolkit/tree/master/toolkit)
 1. High Pass Filter(HPF) and Low Pass Filter (LPF) (`hpf.py`)
 2. Canny edge detection(`canny.py`)
 3. Find contours (`contours.py`)
@@ -61,6 +62,7 @@
 17. Save and load an SVM detector with `svm.save()` and `svm.load()`
 
 ### Toolkit - Video
+Files can the found in the folder [Toolkit Video](https://github.com/yanniey/computer_vision_toolkit/tree/master/toolkit_video)
 1. Object tracking techniques:
     1. Background subtraction
         * Basic motion detection using background subtraction `basic_motion_detection.py`
@@ -71,6 +73,7 @@
 2. Kalman filters `kalman.py`, `kalman_pedestrian_tracking.py`
 
 ### Toolkit - Neural Network
+Files can the found in the folder [Toolkit Neural Network](https://github.com/yanniey/computer_vision_toolkit/tree/master/toolkit_neural_network)
 1. Simple neural network `simple_neural_net.py`, `neural_net_multiple_features.py`
 2. Recognizing handwritten MNIST digits with neural network `neural_net_MNIST.py`. Run `test_neural_net_MNIST.py` to see the neural net's accuracy
 3. Use the model built from MNIST data on new data `detect_and_classify_digits.py`
@@ -87,6 +90,7 @@
     * Age and gender detection using the Caffe model `age_net` and `gender_net`
 
 ### Toolkit - Imitate Film Filters
+Files can the found in the folder [toolkit_film_filters](https://github.com/yanniey/computer_vision_toolkit/tree/master/toolkit_film_filters)
 1. Emulate the following 4 types of films using curves
     * Kodak Portra, a family of films that is optimized for portraits and weddings `class BGRPortraCurveFilter` in `filters.py`
     * Fuji Provia, a family of general-purpose films `class BGRProviaCurveFilter` in `filters.py`
